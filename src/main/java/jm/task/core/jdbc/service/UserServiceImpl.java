@@ -9,14 +9,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     UserDaoJDBCImpl dao = new UserDaoJDBCImpl();
-    public UserServiceImpl() {
-        try {
-            Util connect = new Util();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
+    
     public void createUsersTable() {
         dao.createUsersTable();
     }
