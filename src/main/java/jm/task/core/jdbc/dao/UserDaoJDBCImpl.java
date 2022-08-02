@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private static final String SQL_DELETE = "DELETE FROM EMPLOYEE WHERE NAME=?";
+    private static final String SQL_DELETE = "DELETE FROM users WHERE NAME=?";
     private static final String SQL_INSERT = "INSERT INTO users (name, lastname, age) VALUES( ?, ?, ?)";
     public UserDaoJDBCImpl() {
 
