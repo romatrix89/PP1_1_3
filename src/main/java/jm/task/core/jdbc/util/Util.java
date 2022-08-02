@@ -6,13 +6,13 @@ public class Util {
     private static final String connectionURL = "jdbc:mysql://localhost:3306/mysql";
     private static final String passwordUser = "Matrix%1989";
     private static final String userName = "root";
-    private static Connection newConnection;
+    private static final Connection newConnection;
 
-    public Util() throws ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+    static {
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             newConnection = DriverManager.getConnection(connectionURL, userName, passwordUser);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
@@ -21,4 +21,3 @@ public class Util {
         return newConnection;
     }
 }
-
